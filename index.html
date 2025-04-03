@@ -18,11 +18,12 @@
             background-color: #1a1a1a;
             color: white;
             overflow: hidden;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             text-align: center;
+            padding: 0 20px;
         }
 
         /* Background Image */
@@ -41,9 +42,9 @@
 
         /* Main Container */
         .container {
-            padding: 20px;
-            max-width: 1200px;
+            max-width: 900px;
             width: 100%;
+            padding: 20px;
         }
 
         .brand-name {
@@ -70,9 +71,9 @@
             font-size: 2.5em;
             font-weight: 600;
             background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
+            padding: 15px 25px;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             color: #FFD700; /* Gold countdown text */
             animation: fadeIn 2s ease-in-out 1s;
         }
@@ -96,18 +97,18 @@
         /* Media Queries for Mobile Responsiveness */
         @media (max-width: 768px) {
             .brand-name {
-                font-size: 4em;
+                font-size: 5em;
                 letter-spacing: 3px;
             }
 
             .subtitle {
-                font-size: 1.2em;
+                font-size: 1.3em;
                 margin-bottom: 20px;
             }
 
             .countdown {
                 font-size: 2em;
-                padding: 8px 16px;
+                padding: 12px 20px;
             }
 
             .footer {
@@ -115,4 +116,65 @@
             }
         }
 
-        @media (max-width: 480
+        @media (max-width: 480px) {
+            .brand-name {
+                font-size: 4em;
+                letter-spacing: 2px;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+                margin-bottom: 15px;
+            }
+
+            .countdown {
+                font-size: 1.7em;
+                padding: 10px 18px;
+            }
+
+            .footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+    <div class="brand-name">Twenty8 AI</div>
+    <div class="subtitle">We’re building something extraordinary for you. Stay tuned!</div>
+    <div class="countdown" id="countdown">
+        Launching in: <span id="countdown-timer"></span>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 Twenty8 AI | All Rights Reserved</p>
+</div>
+
+<script>
+    // Countdown Timer
+    const countdownDate = new Date("May 1, 2025 00:00:00").getTime();
+
+    const countdownTimer = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("countdown-timer").innerHTML = "Launched!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
