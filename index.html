@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #000; /* Solid Black Background */
+            background-color: #000;
             color: white;
             overflow: hidden;
             display: flex;
@@ -26,7 +26,6 @@
             padding: 0 20px;
         }
 
-        /* Main Container */
         .container {
             max-width: 900px;
             width: 100%;
@@ -37,11 +36,11 @@
         .brand-name {
             font-size: 6em;
             font-weight: 800;
-            color: #FFD700; /* Luxurious Gold */
+            color: #FFD700;
             letter-spacing: 5px;
             text-transform: uppercase;
             margin-bottom: 20px;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.7); /* Glowing effect */
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
             animation: fadeIn 1.5s ease-in-out;
         }
 
@@ -61,17 +60,15 @@
             padding: 20px 30px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            color: #FFD700; /* Gold countdown text */
+            color: #FFD700;
             animation: fadeIn 1.5s ease-in-out 1s;
         }
 
-        /* Countdown Animation */
         @keyframes fadeIn {
             0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Footer */
         .footer {
             position: absolute;
             bottom: 20px;
@@ -82,7 +79,6 @@
             font-weight: 300;
         }
 
-        /* Media Queries for Mobile Responsiveness */
         @media (max-width: 768px) {
             .brand-name {
                 font-size: 5em;
@@ -141,12 +137,13 @@
 </div>
 
 <script>
-    // Countdown Timer
-    const countdownDate = new Date("May 1, 2025 00:00:00").getTime();
+    // Countdown Timer - 30 days from now
+    const now = new Date();
+    const countdownDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
 
     const countdownTimer = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = countdownDate - now;
+        const currentTime = new Date().getTime();
+        const distance = countdownDate - currentTime;
 
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
