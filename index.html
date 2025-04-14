@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Coming Soon - Twenty8 AI</title>
   <style>
@@ -10,6 +10,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
     }
 
     body {
@@ -30,6 +35,7 @@
       width: 100%;
       padding: 20px;
       z-index: 10;
+      overflow-wrap: break-word;
     }
 
     .brand-name {
@@ -44,6 +50,7 @@
       background-clip: text;
       -webkit-background-clip: text;
       animation: gradientFade 3s ease-in-out infinite;
+      word-break: break-word;
     }
 
     @keyframes gradientFade {
@@ -116,8 +123,9 @@
 
     @media (max-width: 480px) {
       .brand-name {
-        font-size: 4em;
-        letter-spacing: 2px;
+        font-size: 3.5em;
+        letter-spacing: 1.5px;
+        word-break: break-word;
       }
 
       .subtitle {
