@@ -6,12 +6,35 @@
   <title>Coming Soon - TWENTY8 AI</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; background: #000; font-family: Arial, sans-serif; display: flex; flex-direction: column; }
-    .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
-    .logo-wrapper { position: relative; width: 250px; max-width: 70vw; margin-bottom: 20px; }
-    .logo-wrapper svg { width: 100%; height: auto; display: block; }
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: #000;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo-wrapper {
+      position: relative;
+      width: 250px;
+      max-width: 70vw;
+      margin-bottom: 20px;
+    }
+    .logo-wrapper svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     .shine-overlay {
-      content: '';
       position: absolute;
       top: 0;
       left: -75%;
@@ -76,14 +99,11 @@
 
 <div class="container">
   <div class="logo-wrapper">
-    <!-- Inline SVG Logo starts here -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-      <path fill="#00FF00" d="M250 0C112 0 0 112 0 250s112 250 250 250 250-112 250-250S388 0 250 0zm0 475C125.6 475 25 374.4 25 250S125.6 25 250 25s225 100.6 225 225-100.6 225-225 225z"/>
-      <!-- Add your actual SVG paths inside here. -->
-      <!-- I used a generic circular logo path for illustration. -->
+    <!-- Real luminous green horizontal 8 logo -->
+    <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50,50 a25,25 0 1,0 50,0 a25,25 0 1,0 -50,0" fill="none" stroke="#00FF00" stroke-width="10"/>
     </svg>
     <div class="shine-overlay"></div>
-    <!-- Inline SVG Logo ends here -->
   </div>
 
   <div class="brand-name">TWENTY8 AI</div>
