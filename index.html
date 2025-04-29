@@ -6,28 +6,27 @@
   <title>Coming Soon - TWENTY8 AI</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; background: #000; color: white; font-family: 'Arial', sans-serif; display: flex; flex-direction: column; }
+    html, body { height: 100%; width: 100%; background: #000; font-family: Arial, sans-serif; display: flex; flex-direction: column; }
     .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
-    .logo {
-      width: 180px;
-      height: 180px;
-      background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00);
-      background-size: 200% auto;
-      animation: gradientFade 3s ease-in-out infinite;
-      -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAADTEElEQVR4nOz9d7xk1Znf+3+evSvnqlMn53M6J7qhmyYnASJnEAKhLM1okvPY/r38uvf62r6279ieO07jGXlGo1EGJCERRBIahIQkYhM6p3P65Fw57dr1/P44YkYakNRdTeg+rPefoK619lZT31rpWaKqGIZhGIZxerPe6w4YhmEYhnHyTKAbhmEYxgpgAt0wDMMwVgAT6IZhGIaxAphANwzDMIwVwAS6YRiGYa...');
-      -webkit-mask-repeat: no-repeat;
-      -webkit-mask-position: center;
-      -webkit-mask-size: contain;
-      mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAADTEElEQVR4nOz9d7xk1Znf+3+evSvnqlMn53M6J7qhmyYnASJnEAKhLM1okvPY/r38uvf62r6279ieO07jGXlGo1EGJCERRBIahIQkYhM6p3P65Fw57dr1/P44YkYakNRdTeg+rPefoK619lZT31rpWaKqGIZhGIZxerPe6w4YhmEYhnHyTKAbhmEYxgpgAt0wDMMwVgAT6IZhGIaxAphANwzDMIwVwAS6YRiGYa...');
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: contain;
-      margin-bottom: 20px;
+    .logo-wrapper { position: relative; width: 250px; max-width: 70vw; margin-bottom: 20px; }
+    .logo-wrapper svg { width: 100%; height: auto; display: block; }
+    .shine-overlay {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg);
+      animation: shine 3s infinite;
+      mix-blend-mode: screen;
+      pointer-events: none;
     }
-    @keyframes gradientFade {
-      0% { background-position: 0% center; }
-      50% { background-position: 100% center; }
-      100% { background-position: 0% center; }
+    @keyframes shine {
+      0% { left: -75%; }
+      50% { left: 125%; }
+      100% { left: 125%; }
     }
     .brand-name {
       font-size: 2.2em;
@@ -41,6 +40,11 @@
       background-clip: text;
       -webkit-background-clip: text;
       animation: gradientFade 3s ease-in-out infinite;
+    }
+    @keyframes gradientFade {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
     }
     .subtitle {
       font-size: 0.95em;
@@ -71,7 +75,16 @@
 <body>
 
 <div class="container">
-  <div class="logo"></div>
+  <div class="logo-wrapper">
+    <!-- Inline SVG Logo starts here -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+      <path fill="#00FF00" d="M250 0C112 0 0 112 0 250s112 250 250 250 250-112 250-250S388 0 250 0zm0 475C125.6 475 25 374.4 25 250S125.6 25 250 25s225 100.6 225 225-100.6 225-225 225z"/>
+      <!-- Add your actual SVG paths inside here. -->
+      <!-- I used a generic circular logo path for illustration. -->
+    </svg>
+    <div class="shine-overlay"></div>
+    <!-- Inline SVG Logo ends here -->
+  </div>
 
   <div class="brand-name">TWENTY8 AI</div>
   <div class="subtitle">We’re building something intelligent and luminous. Stay tuned!</div>
