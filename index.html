@@ -21,39 +21,39 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="logo-wrapper">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wgARCAH0AfQDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EA..." alt="TWENTY8 AI Logo" />
-      <div class="shine-overlay"></div>
-    </div>
-
-    <div class="brand-name">TWENTY8 AI</div>
-    <div class="subtitle">We’re building something intelligent and luminous. Stay tuned!</div>
-    <div class="countdown" id="countdown">Launching in: <span id="countdown-timer"></span></div>
+<div class="container">
+  <div class="logo-wrapper">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAB4WklEQVR4nOy9d9hlWVXn/11rh5Nuvve9b86pcq7qCh3JEgxjziCK4gzg6E/UMTKgIuOoKIIYGVFkhFFHHxkdxwHBBqTpQOimc1fO4U03n3P2749976lbb1UX3dDVDcz5PFXv8743nLPP3mvttfbaa+8NpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpK..." alt="TWENTY8 AI Logo" />
+    <div class="shine-overlay"></div>
   </div>
 
-  <div class="footer">
-    <p>&copy; 2025 TWENTY8 AI | All Rights Reserved</p>
-  </div>
+  <div class="brand-name">TWENTY8 AI</div>
+  <div class="subtitle">We’re building something intelligent and luminous. Stay tuned!</div>
+  <div class="countdown" id="countdown">Launching in: <span id="countdown-timer"></span></div>
+</div>
 
-  <script>
-    const now = new Date();
-    const launchDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
-    const timer = setInterval(function() {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-      if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown-timer").innerText = "Launched!";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("countdown-timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-  </script>
+<div class="footer">
+  <p>&copy; 2025 TWENTY8 AI | All Rights Reserved</p>
+</div>
+
+<script>
+const now = new Date();
+const launchDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+  if (distance < 0) {
+    clearInterval(timer);
+    document.getElementById("countdown-timer").innerText = "Launched!";
+    return;
+  }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("countdown-timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
+</script>
 
 </body>
 </html>
