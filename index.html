@@ -1,160 +1,59 @@
-
-html_twenty8 = f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Coming Soon - TWENTY8 AI</title>
   <style>
-    * {{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }}
-    html, body {{
-      height: 100%;
-      width: 100%;
-    }}
-    body {{
-      font-family: 'Arial', sans-serif;
-      background-color: #000;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      text-align: center;
-      padding: 10px;
-    }}
-    .container {{
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }}
-    .logo-wrapper {{
-      position: relative;
-      width: 180px;
-      max-width: 60vw;
-      margin-bottom: 10px;
-    }}
-    .logo-wrapper img {{
-      width: 100%;
-      height: auto;
-      display: block;
-    }}
-    .shine-overlay {{
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      animation: shine 3s infinite;
-      pointer-events: none;
-      mix-blend-mode: screen;
-    }}
-    @keyframes shine {{
-      0% {{ left: -100%; }}
-      50% {{ left: 100%; }}
-      100% {{ left: 100%; }}
-    }}
-    .brand-name {{
-      font-size: 2.2em;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00);
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: gradientFade 3s ease-in-out infinite;
-    }}
-    @keyframes gradientFade {{
-      0% {{ background-position: 0% center; }}
-      50% {{ background-position: 100% center; }}
-      100% {{ background-position: 0% center; }}
-    }}
-    .subtitle {{
-      font-size: 0.95em;
-      font-weight: 300;
-      color: #ccc;
-      margin-bottom: 15px;
-      opacity: 0.9;
-      animation: fadeIn 1.5s ease-in-out 0.5s;
-      padding: 0 5px;
-    }}
-    .countdown {{
-      font-size: 1.2em;
-      font-weight: 600;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 10px 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-      color: #00ff00;
-      animation: fadeIn 1.5s ease-in-out 1s;
-      margin-bottom: 10px;
-    }}
-    @keyframes fadeIn {{
-      0% {{ opacity: 0; transform: translateY(20px); }}
-      100% {{ opacity: 1; transform: translateY(0); }}
-    }}
-    .footer {{
-      font-size: 0.8em;
-      color: #777;
-      letter-spacing: 1px;
-      opacity: 0.6;
-      font-weight: 300;
-      padding: 5px 0;
-    }}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; background: #000; color: white; font-family: 'Arial', sans-serif; display: flex; flex-direction: column; }
+    .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
+    .logo-wrapper { position: relative; width: 180px; max-width: 60vw; margin-bottom: 10px; }
+    .logo-wrapper img { width: 100%; height: auto; display: block; }
+    .shine-overlay { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); animation: shine 3s infinite; mix-blend-mode: screen; pointer-events: none; }
+    @keyframes shine { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
+    .brand-name { font-size: 2.2em; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00); background-size: 200% auto; color: transparent; background-clip: text; -webkit-background-clip: text; animation: gradientFade 3s ease-in-out infinite; }
+    @keyframes gradientFade { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
+    .subtitle { font-size: 0.95em; font-weight: 300; color: #ccc; margin-bottom: 15px; opacity: 0.9; }
+    .countdown { font-size: 1.2em; font-weight: 600; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 6px; color: #00ff00; margin-bottom: 10px; }
+    .footer { font-size: 0.8em; color: #777; opacity: 0.6; font-weight: 300; text-align: center; padding: 10px 0; }
   </style>
 </head>
 <body>
+
   <div class="container">
     <div class="logo-wrapper">
-      <img src="{data_uri_twenty8}" alt="TWENTY8 AI Logo">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAA..." alt="TWENTY8 AI Logo" />
       <div class="shine-overlay"></div>
     </div>
+
     <div class="brand-name">TWENTY8 AI</div>
     <div class="subtitle">We’re building something intelligent and luminous. Stay tuned!</div>
-    <div class="countdown" id="countdown">
-      Launching in: <span id="countdown-timer"></span>
-    </div>
+    <div class="countdown" id="countdown">Launching in: <span id="countdown-timer"></span></div>
   </div>
+
   <div class="footer">
     <p>&copy; 2025 TWENTY8 AI | All Rights Reserved</p>
   </div>
+
   <script>
     const now = new Date();
-    const countdownDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
-    const countdownTimer = setInterval(function() {{
-      const currentTime = new Date().getTime();
-      const distance = countdownDate - currentTime;
+    const launchDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+    const timer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown-timer").innerText = "Launched!";
+        return;
+      }
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("countdown-timer").innerHTML = `${{days}}d ${{hours}}h ${{minutes}}m ${{seconds}}s`;
-      if (distance < 0) {{
-        clearInterval(countdownTimer);
-        document.getElementById("countdown-timer").innerHTML = "Launched!";
-      }}
-    }}, 1000);
+      document.getElementById("countdown-timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
   </script>
+
 </body>
 </html>
-
-with open(output_path_twenty8, "w") as f:
-    f.write(html_twenty8)
-
-output_path_twenty8
