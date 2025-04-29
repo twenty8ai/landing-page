@@ -8,24 +8,70 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { height: 100%; width: 100%; background: #000; color: white; font-family: 'Arial', sans-serif; display: flex; flex-direction: column; }
     .container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center; }
-    .logo-wrapper { position: relative; width: 180px; max-width: 60vw; margin-bottom: 10px; }
-    .logo-wrapper img { width: 100%; height: auto; display: block; }
-    .shine-overlay { position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); animation: shine 3s infinite; mix-blend-mode: screen; pointer-events: none; }
-    @keyframes shine { 0% { left: -100%; } 50% { left: 100%; } 100% { left: 100%; } }
-    .brand-name { font-size: 2.2em; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00); background-size: 200% auto; color: transparent; background-clip: text; -webkit-background-clip: text; animation: gradientFade 3s ease-in-out infinite; }
-    @keyframes gradientFade { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
-    .subtitle { font-size: 0.95em; font-weight: 300; color: #ccc; margin-bottom: 15px; opacity: 0.9; }
-    .countdown { font-size: 1.2em; font-weight: 600; background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 6px; color: #00ff00; margin-bottom: 10px; }
-    .footer { font-size: 0.8em; color: #777; opacity: 0.6; font-weight: 300; text-align: center; padding: 10px 0; }
+    .logo {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00);
+      background-size: 200% auto;
+      animation: gradientFade 3s ease-in-out infinite;
+      -webkit-mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAADTEElEQVR4nOz9d7xk1Znf+3+evSvnqlMn53M6J7qhmyYnASJnEAKhLM1okvPY/r38uvf62r6279ieO07jGXlGo1EGJCERRBIahIQkYhM6p3P65Fw57dr1/P44YkYakNRdTeg+rPefoK619lZT31rpWaKqGIZhGIZxerPe6w4YhmEYhnHyTKAbhmEYxgpgAt0wDMMwVgAT6IZhGIaxAphANwzDMIwVwAS6YRiGYa...');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: contain;
+      mask-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAADTEElEQVR4nOz9d7xk1Znf+3+evSvnqlMn53M6J7qhmyYnASJnEAKhLM1okvPY/r38uvf62r6279ieO07jGXlGo1EGJCERRBIahIQkYhM6p3P65Fw57dr1/P44YkYakNRdTeg+rPefoK619lZT31rpWaKqGIZhGIZxerPe6w4YhmEYhnHyTKAbhmEYxgpgAt0wDMMwVgAT6IZhGIaxAphANwzDMIwVwAS6YRiGYa...');
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      margin-bottom: 20px;
+    }
+    @keyframes gradientFade {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
+    .brand-name {
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00ff00, #ccffcc, #00ff00);
+      background-size: 200% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: gradientFade 3s ease-in-out infinite;
+    }
+    .subtitle {
+      font-size: 0.95em;
+      font-weight: 300;
+      color: #ccc;
+      margin-bottom: 15px;
+      opacity: 0.9;
+    }
+    .countdown {
+      font-size: 1.2em;
+      font-weight: 600;
+      background: rgba(255,255,255,0.1);
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: #00ff00;
+      margin-bottom: 10px;
+    }
+    .footer {
+      font-size: 0.8em;
+      color: #777;
+      opacity: 0.6;
+      font-weight: 300;
+      text-align: center;
+      padding: 10px 0;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <div class="logo-wrapper">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAB4WklEQVR4nOy9d9hlWVXn/11rh5Nuvve9b86pcq7qCh3JEgxjziCK4gzg6E/UMTKgIuOoKIIYGVFkhFFHHxkdxwHBBqTpQOimc1fO4U03n3P2749976lbb1UX3dDVDcz5PFXv8743nLPP3mvttfbaa+8NpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpK..." alt="TWENTY8 AI Logo" />
-    <div class="shine-overlay"></div>
-  </div>
+  <div class="logo"></div>
 
   <div class="brand-name">TWENTY8 AI</div>
   <div class="subtitle">We’re building something intelligent and luminous. Stay tuned!</div>
